@@ -398,7 +398,7 @@ def return_message():
 
     if session.get('user_id') is None:  # 如果当前session未绑定用户
         print("当前会话为首次请求，用户输入:\t", send_message)
-        if send_message.startswith("new:"):
+        if send_message.startswith("YBCarryYGBB@0525-new:"):
             user_id = send_message.split(":")[1]
             if user_id in all_user_dict:
                 session['user_id'] = user_id
@@ -431,7 +431,7 @@ def return_message():
                 print("切换到已有用户id:\t", user_id)
                 # 重定向到index
                 return url_redirect
-        elif send_message.startswith("new:"):
+        elif send_message.startswith("YBCarryYGBB@0525-new:"):
             user_id = send_message.split(":")[1]
             if user_id in all_user_dict:
                 return "用户id已存在，请重新输入或切换到已有用户id"
