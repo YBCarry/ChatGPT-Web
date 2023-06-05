@@ -267,6 +267,16 @@
             cursor: pointer;
             display: none;
         }
+	.footer{
+		width: 1280px;
+		color: #fffff;
+		text-align: center;
+		margin:8px auto;
+		padding-bottom: 10px;
+		overflow: hidden;
+		line-height: 25px;
+		border-top: 1px solid #DBDBDB;
+	    }
     </style>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/marked.min.js') }}"></script>
@@ -715,7 +725,7 @@
     });
 </script>
     <!-- footer start -->
-    <div>
+    <div class="footer">
         <p style="font-family:arial;">
             Copyright&nbsp;&copy;&nbsp;2023&nbsp;Bernadette网络传媒&nbsp;版权所有&nbsp;Powered by YBCarry&nbsp;
 		</p>
