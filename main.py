@@ -34,9 +34,9 @@ STREAM_FLAG = True  # 是否开启流式推送
 USER_DICT_FILE = "all_user_dict_v2.pkl"  # 用户信息存储文件（包含版本）
 lock = threading.Lock()  # 用于线程锁
 
-project_info = "## Selina-GPT🏆    \n" \
+project_info = "## YBCarry - GPT 🏆    \n" \
                " Code From  " \
-               "[ChatGPT-Web](https://github.com/LiangYang666/ChatGPT-Web)  \n" \
+               "[ChatGPT-Web](https://github.com/YBCarry/ChatGPT-Web)  \n" \
                "发送`帮助`可获取帮助  \n"
 
 
@@ -54,7 +54,11 @@ def get_response_from_ChatGPT_API(message_context, apikey):
               "Authorization": "Bearer " + apikey}
 
     data = {
-        "model": "gpt-3.5-turbo",
+        # GPT 4
+        # model="gpt-4-1106-preview", 
+        # GPT 3.5
+        # "model": "gpt-3.5-turbo",
+        model="gpt-3.5-turbo-1106",
         "messages": message_context
     }
     url = "https://api.openai.com/v1/chat/completions"
@@ -152,7 +156,11 @@ def get_response_stream_generate_from_ChatGPT_API(message_context, apikey, messa
               "Authorization": "Bearer " + apikey}
 
     data = {
-        "model": "gpt-3.5-turbo",
+        # GPT 4
+        # model="gpt-4-1106-preview", 
+        # GPT 3.5
+        # "model": "gpt-3.5-turbo",
+        model="gpt-3.5-turbo-1106",
         "messages": message_context,
         "stream": True
     }
@@ -398,7 +406,8 @@ def return_message():
 
     if session.get('user_id') is None:  # 如果当前session未绑定用户
         print("当前会话为首次请求，用户输入:\t", send_message)
-        if send_message.startswith("YBCarryYGBB@0525-new:"):
+        ############### TODO ###############
+        if send_message.startswith("YBCarryYGBB@1101-new:"):
             user_id = send_message.split(":")[1]
             if user_id in all_user_dict:
                 session['user_id'] = user_id
@@ -431,7 +440,7 @@ def return_message():
                 print("切换到已有用户id:\t", user_id)
                 # 重定向到index
                 return url_redirect
-        elif send_message.startswith("YBCarryYGBB@0525-new:"):
+        elif send_message.startswith("YBCarryYGBB@1101-new:"):
             user_id = send_message.split(":")[1]
             if user_id in all_user_dict:
                 return "用户id已存在，请重新输入或切换到已有用户id"
