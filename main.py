@@ -59,7 +59,13 @@ def get_response_from_ChatGPT_API(message_context, apikey):
         # GPT 3.5
         # "model": "gpt-3.5-turbo",
         model="gpt-3.5-turbo-1106",
-        "messages": message_context
+        "messages": message_context,
+        # 值在[0,1]之间，越大表示回复越具有不确定性
+        temperature=0.5,
+        # 回复的token上限
+        max_tokens=500, 
+        # 值在[0,1]之间，设置令牌采样的概率质量截止值
+        top_p=0.5,
     }
     url = "https://api.openai.com/v1/chat/completions"
 
