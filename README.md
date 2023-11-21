@@ -1,5 +1,5 @@
 # 使用GPT-3.5 API创建的ChatGPT聊天页面，模型回复效果与官网的ChatGPT一致
-## Star the [Repository](https://github.com/LiangYang666/ChatGPT-Web)  
+## Star the [Repository](https://github.com/YBCarry/ChatGPT-Web)  
 ## 特性
 > 极简配置  
 > 支持railway云部署  
@@ -16,7 +16,7 @@
 
 ## 使用前提
 > 1. 因国内IP被封或OpenAI API被墙，因此自己需要有代理，稍后需要配置，（若使用railway部署时不需要有代理)    
-> 2. 有openai账号，注册事项可以参考[此文章](https://juejin.cn/post/7173447848292253704)   
+> 2. 有openai账号
 > 3. 创建好api_key, 进入[OpenAI链接](https://platform.openai.com/),右上角点击，进入页面设置  
 ![image](https://user-images.githubusercontent.com/38237931/222461544-260ef350-2d05-486d-bf36-d078873b0f7a.png)
 
