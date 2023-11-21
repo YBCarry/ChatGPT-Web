@@ -61,11 +61,11 @@ def get_response_from_ChatGPT_API(message_context, apikey):
         "model": "gpt-3.5-turbo-1106",
         "messages": message_context,
         # 值在[0,1]之间，越大表示回复越具有不确定性
-        temperature=0.5,
+        "temperature": 0.5,
         # 回复的token上限
-        max_tokens=500, 
+        "max_tokens": 500, 
         # 值在[0,1]之间，设置令牌采样的概率质量截止值
-        top_p=0.5,
+        "top_p": 0.5,
     }
     url = "https://api.openai.com/v1/chat/completions"
 
@@ -163,11 +163,17 @@ def get_response_stream_generate_from_ChatGPT_API(message_context, apikey, messa
 
     data = {
         # GPT 4
-        # model="gpt-4-1106-preview", 
+        # "model": "gpt-4-1106-preview", 
         # GPT 3.5
         # "model": "gpt-3.5-turbo",
-        model="gpt-3.5-turbo-1106",
+        "model": "gpt-3.5-turbo-1106",
         "messages": message_context,
+        # 值在[0,1]之间，越大表示回复越具有不确定性
+        "temperature": 0.5,
+        # 回复的token上限
+        "max_tokens": 500, 
+        # 值在[0,1]之间，设置令牌采样的概率质量截止值
+        "top_p": 0.5,
         "stream": True
     }
     print("开始流式请求")
