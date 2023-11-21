@@ -55,10 +55,10 @@ def get_response_from_ChatGPT_API(message_context, apikey):
 
     data = {
         # GPT 4
-        # model="gpt-4-1106-preview", 
+        # "model": "gpt-4-1106-preview", 
         # GPT 3.5
         # "model": "gpt-3.5-turbo",
-        model="gpt-3.5-turbo-1106",
+        "model": "gpt-3.5-turbo-1106",
         "messages": message_context,
         # 值在[0,1]之间，越大表示回复越具有不确定性
         temperature=0.5,
