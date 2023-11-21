@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>❤️Selina-ChatGPT❤️</title>
+    <title>❤️YBCarry-ChatGPT ❤️</title>
 {#    标签页图标显示#}
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon-32x32.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
     <style type="text/css">
         *{
         padding: 0;
@@ -587,7 +587,7 @@
                 var html = "";
                 for (var i = 0; i < messages.length; i++) {
                     if (messages[i].role === "user") {
-                        html += '<div class="item item-right"><div class="bubble bubble-right">' + messages[i].content + '</div><div class="avatar"><img src="./static/people.jpg" /></div></div>';
+                        html += '<div class="item item-right"><div class="bubble bubble-right">' + messages[i].content + '</div><div class="avatar"><img src="./static/user.jpg" /></div></div>';
                     } else if(messages[i].role === "assistant"){
                         html += '<div class="item item-left"><div class="avatar"><img src="./static/chatgpt.png" /></div><div class="bubble bubble-left markdown">' + marked.marked(messages[i].content) + '</div></div>';
                     } else if (messages[i].role === "system") {
@@ -632,7 +632,7 @@
             last_time = send_time.getTime();
             send_time_str = get_time_str(send_time);
         }
-        html += '<div class="item item-right"><div class="bubble bubble-right markdown">' + marked.marked(text) + '</div><div class="avatar"><img src="./static/people.jpg" /></div></div>';
+        html += '<div class="item item-right"><div class="bubble bubble-right markdown">' + marked.marked(text) + '</div><div class="avatar"><img src="./static/user.jpg" /></div></div>';
         $(".content").append(html);
         $("#textarea").val("");
         $(".content").scrollTop($(".content")[0].scrollHeight);
